@@ -10,6 +10,7 @@
 
       it('should return whatever value is passed into it', function() {
         var uniqueObject = {};
+  
         expect(_.identity(1)).to.equal(1);
         expect(_.identity('string')).to.equal('string');
         expect(_.identity(false)).to.be.false;
@@ -43,7 +44,8 @@
       checkForNativeMethods(function() {
         _.last([1,2,3]);
       });
-
+    
+      
       it('should pull the last element from an array', function() {
         expect(_.last([1,2,3])).to.equal(3);
       });
@@ -346,7 +348,7 @@
         var iterator = function(value) { return value === 1; };
         var numbers = [1, 2, 2, 3, 4, 4];
 
-        expect(_.uniq(FILL_ME_IN)).to.eql([1, 2]);
+        expect(_.uniq(numbers)).to.eql([1, 2, 3, 4]);
       });
 
       it('should produce a brand new array instead of modifying the input array', function() {
